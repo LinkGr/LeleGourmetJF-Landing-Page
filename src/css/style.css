@@ -238,13 +238,15 @@ main {
     gap: 12%;
     padding: 10% 15%;
 
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     text-align: center;
     font-weight: 600;
     color: var(--text-color-white);
 }
 .qualidade-division img {
+    align-self: center;
     height: 45%;
+    max-width: 75px;
     aspect-ratio: 1;
 }
 .qualidade-division > p {
@@ -384,6 +386,9 @@ main {
     width: 100%;
     height: 84.9vh;
     padding: 0 0 0 0;
+}
+#container-sobre > h2 {
+    display: none;
 }
 #container-sobre > img {
     align-self: flex-end;
