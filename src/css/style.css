@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 * {
     padding: 0;
@@ -20,25 +20,33 @@
 
 body::-webkit-scrollbar {
     width: 13px;
-}
-  
+} 
 body::-webkit-scrollbar-track {
     background: transparent;
     box-shadow: 0px 0px 5px var(--background-color-brown);
 }
-  
 body::-webkit-scrollbar-thumb {
     background: var(--text-color-brown);
     box-shadow: 0px 0px 5px var(--background-color-brown);
     border-radius: 50px;
 }
-  
-#cardapio-itens::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
     background: var(--cta-color-orange);
 }
-
 h1, h2 {font-family: 'Maven Pro', sans-serif;}
 * :not(h1, h2) {font-family: 'Montserrat', sans-serif;}
+
+h2 {
+    font-size: clamp(2.5rem, 3.7vw, 3.7rem);
+    color: var(--cta-color-orange);
+}
+h3 {
+    font-size: clamp(1rem, 2.1vw, 2.1rem);
+    font-weight: 800;
+}
+p {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
 
 html {
     font-size: 62.5%;
@@ -47,8 +55,10 @@ html {
 
 body {
     max-width: 100vw;
-    height: 100vh;
+    height: 100dvh;
 }
+
+
 #background-pattern {
     position: fixed;
     top: 0;
@@ -58,8 +68,9 @@ body {
     width: 100%;
 
     object-fit: cover;
-    z-index: -1;
+    z-index: -3;
 }
+
 
 header {
     position: fixed;
@@ -70,9 +81,12 @@ header {
     align-items: center;
 
     width: 100%;
-    height: 95px;
-    padding: 0 13%;
-    z-index: 2;
+    max-height: 15dvh;
+    height: 100%;
+    min-height: 70px;
+
+    padding: 0 10%;
+    z-index: 5;
 
     animation: header-background linear;
     animation-timeline: scroll();
@@ -81,7 +95,7 @@ header {
     0% {
         background-color: transparent;
     }
-    2% {
+    4% {
         background-color: #face9a;
     }
     100% {
@@ -99,13 +113,15 @@ header {
     display: flex;
     justify-content: end;
 
-    width: 55%;
-    gap: 10%;
+    width: 100%;
+    gap: 6%;
 
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
+
 #menu {display: none;}
 #menu-label {display: none;}
+
 #nav-bar * {
     text-decoration: none;
     list-style: none;
@@ -134,49 +150,44 @@ header {
 }
 
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 
 
 #container-inicio {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    grid-template-rows: 100%;
-    justify-items: start;
+    display: flex;
     align-items: center;
 
-    height: 100vh;
-    padding: 0 13%;
+    height: 100dvh;
+    padding: 0 10%;
+    gap: 4%;
 
     color: var(--text-color-brown);
 }
 #container-inicio img {
-    width: 100%;
+    width: 50%;
+
+    aspect-ratio: 1;
+    object-fit: contain;
 }
 #text-inicio {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    gap: 3%;
 
-    max-width: 100%;
+    min-width: 50%;
     height: 100%;
 
 }
 #text-inicio h1 {
-    font-size: 4rem;
+    margin-bottom: 4%;
+
+    font-size: clamp(2.5rem, 3.8vw, 3.8rem);
     font-weight: 700;
-    line-height: calc(4rem * 1.3);
+    line-height: clamp(calc(2rem * 1.3), calc(3.8vw * 1.3), calc(3.8rem * 1.3));
 }
-#text-inicio p {
-    font-size: 2rem;
-    line-height: calc(2rem * 1.2);
+#text-inicio > p {
+    margin-bottom: 8%;
+    line-height: clamp(calc(0.9rem * 1.3), calc(2vw * 1.3), calc(1.9rem * 1.3));
 }
 #text-inicio button {
     all: unset;
@@ -184,17 +195,16 @@ main {
     box-sizing: border-box;
 
     padding: 3% 6%;
-    margin-top: 6%;
     border-radius: 500px;
 
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 600;
     color: var(--cta-color-orange);
     
-    backdrop-filter: blur(100%);
-    background-color: #fa5c072d;
     border: 2px solid var(--text-color-white);
+    background-color: #fa5c072d;
     box-shadow: var(--text-color-white) 0px 0px 15px inset, rgba(37, 13, 3, 0.35) 0px 5px 15px;
+    backdrop-filter: blur(100%);
 
     transition: 150ms;
 }
@@ -208,8 +218,8 @@ main {
 
 #container-qualidades {
     width: 100%;
-    height: 100%;
-    padding: 0 13%;
+    height: 220px;
+    padding: 0 10%;
 }
 #container-qualidades > section {
     display: grid;
@@ -217,7 +227,7 @@ main {
     grid-template-rows: 100%;
 
     width: 100%;
-    max-height: 200px;
+    height: 100%;
     border-radius: 20px;
 
     background-color: var(--background-color-brown);
@@ -235,13 +245,8 @@ main {
 
     width: 100%;
     height: 100%;
-    gap: 12%;
-    padding: 10% 15%;
-
-    font-size: 1.6rem;
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-color-white);
+    gap: 13%;
+    padding: 8% 13%;
 }
 .qualidade-division img {
     align-self: center;
@@ -252,51 +257,50 @@ main {
 .qualidade-division > p {
     align-self: center;
     max-width: 80%;
-    line-height: calc(1.7rem * 1.2);
+    line-height: calc(1.8rem * 1.2);
+    color: var(--text-color-white);
+    font-weight: 600;
+    text-align: center;
 }
 
 
 
 
 #container-mais-vendidos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     width: 100%;
-    padding: 0 13%;
-    padding-bottom: 5%;
+    height: 85dvh;
+
+    padding: 2% 10%;
+}
+#container-mais-vendidos h2 {
+    text-align: center;
+    
+    padding: 0 0 5% 0;
 }
 
-#container-mais-vendidos h2 {
-    padding: 5% 0;
-    font-size: 3.5rem;
-    color: var(--cta-color-orange);
-}
 #mais-vendidos-row {
     display: grid;
-    align-items: end;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3%;
+    align-items: end;
 
     width: 100%;
-    height: 100%;
+    height: 78%;
+    gap: 3%;
 }
 .mais-vendidos-item {
-    position: relative;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     width: 100%;
-    height: 90%;
-    padding: 12%;
-    padding-top: 5%;
-    border-radius: 7%;
+    height: 85%;
+    padding: 5% 10%;
+    gap: 5%;
+
+    border-radius: 15px;
 
     background: var(--text-color-pale-orange);
     box-shadow: 0px 3px 8px 0px var(--text-color-brown);
+    
     transition: 150ms;
 }
 .mais-vendidos-item:hover {
@@ -304,64 +308,58 @@ main {
 }
 
 .mais-vendidos-item > picture {
+    position: relative;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: end;
+    align-self: center;
+    margin-bottom: 2%;
 
     width: 75%;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-
+    aspect-ratio: 3/2;
 }
 .mais-vendidos-item > picture > img {
     position: absolute;
-    top: -17%;
-
-    width: 60%;
+    width: 100%;
     aspect-ratio: 1;
-    border-radius: 100%;
+    object-fit: cover;
 
     background-color: var(--background-color-brown);
+    border-radius: 100%;
 }
 .mais-vendidos-item > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-    width: 100%;
+    height: 55.3%;
+    gap: 8%;
 }
-.mais-vendidos-item > div > article {
-    max-width: 85%;
-    padding-bottom: 7%;
-}
+
 .mais-vendidos-item > div > article > h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
 }
 .mais-vendidos-item > div > article > p {
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-size: clamp(1rem, 1.8vw, 1.6rem);
+    font-weight: 500;
 }
 
 .mais-vendidos-item > div > div {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 .mais-vendidos-item > div > div > p {
-    font-size: 1.9rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
     font-weight: 600;
 }
 .mais-vendidos-item > div > div > button {
     all: unset;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 4%;
+    width: clamp(40px, 6vw, 60px);
+    aspect-ratio: 1;
     border-radius: 50%;
 
     background-color: var(--cta-color-orange);
@@ -371,32 +369,37 @@ main {
     box-shadow: 0px 2px 8px 0px var(--text-color-brown) inset;
 }
 .mais-vendidos-item > div > div > button > img {
-    width: 28px;
+    width: 50%;
 }
 
+/*----------------------------------------------*/
+/*----------------------------------------------*/
+/*----------------------------------------------*/
+/*----------------------------------------------*/
+/*----------------------------------------------*/
 
 
 
 #container-sobre {
     display: grid;
     grid-template-columns: 40% 60%;
-
-    align-self: flex-end;
+    grid-template-rows: 100%;
 
     width: 100%;
-    height: 84.9vh;
-    padding: 0 0 0 0;
-}
-#container-sobre > h2 {
-    display: none;
+    height: 85dvh;
+    padding-left: 0%;
 }
 #container-sobre > img {
+    display: block;
+
     align-self: flex-end;
-    justify-self: start;
     
-    width: 135%;
-    margin-left: 13%;
-    z-index: 1;
+    width: 95%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 20%;
+
+    z-index: 2;
 }
 #container-sobre article{
     display: flex;
@@ -405,26 +408,23 @@ main {
     align-items: center;
     
     width: 100%;
-    padding: 0 13%;
-    gap: 4%;
+    padding: 5% 10%;
 
     border-radius: 150px 0 0 150px;
     background-color: var(--background-color-brown);
 }
-
 #container-sobre > article > h2 {
-    justify-self: self-start;
-    font-size: 4rem;
-    color: var(--cta-color-orange);
+    padding-bottom: 2%;
 }
 #container-sobre > article > h3 {
-    max-width: 75%;
-    text-align: center;
-    font-size: 2.8rem;
+    max-width: 65%;
+    padding-bottom: 4%;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: clamp(calc(1.5rem * 1.2), calc(2.5vw * 1.2), calc(2.5rem * 1.2));
     color: var(--text-color-pale-orange);
+    text-align: center;
 }#container-sobre > article > p {
     text-align: center;
-    font-size: 2rem;
     color: var(--text-color-white);
 }
 
@@ -432,22 +432,23 @@ main {
 
 
 #container-cardapio {
-    display: grid;
-    grid-template-rows: 1.8fr 5fr;
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
-    padding: 4% 13%;
+    height: 85dvh;
+    padding: 0% 10% 3% 10%;
 }
 #container-cardapio h2 {
-    justify-self: center;
-    padding-bottom: 5%;
-    font-size: 3.5rem;
-    color: var(--cta-color-orange);
+    align-self: center;
+    padding: 3% 0 5% 0;
 }
 #cardapio-itens {
     display: grid;
     align-items: end;
+
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
     gap: 25% 3%;
 
     width: 100%;
@@ -455,42 +456,42 @@ main {
 }
 
 .cardapio-item {
-    position: relative;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     width: 100%;
-    min-height: 85%;
-    padding: 12%;
-    padding-top: 55%;
-    border-radius: 7%;
+    height: 88%;
+    padding: 5% 10%;
+    gap: 5%;
+
+    border-radius: 15px;
 
     background: var(--text-color-pale-orange);
     box-shadow: 0px 3px 8px 0px var(--text-color-brown);
+    
     transition: 150ms;
 }
 .cardapio-item:hover {
     scale: 1.05;
 }
 .cardapio-item > picture {
-    position: absolute;
-    top: -17%;
+    position: relative;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: end;
+    align-self: center;
+    margin-bottom: 5%;
 
-    width: 65%;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-
-    background-color: var(--background-color-brown);
+    width: 83%;
+    aspect-ratio: 3/2;
 }
 .cardapio-item > picture > img {
+    position: absolute;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    background-color: var(--background-color-brown);
     border-radius: 100%;
 }
 .cardapio-item > div {
@@ -552,7 +553,7 @@ footer {
     height: 110px;
     padding: 1% 13%;
 
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--text-color-white);
     background-color: var(--background-color-brown);
 }
@@ -576,7 +577,7 @@ footer {
     font-weight: 600;
 }
 
-#social-footer-section div {
+#social-links-container {
     display: flex;
     justify-content: space-between;
 
@@ -584,6 +585,6 @@ footer {
     height: 30%;
     gap: 10px;
 }
-#social-footer-section div * {
+#social-links-container * {
     height: 100%;
 }
