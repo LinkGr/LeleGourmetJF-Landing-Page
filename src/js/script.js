@@ -3,7 +3,7 @@ let cardapio_container = document.querySelector("#cardapio-itens");
 
 let mais_vendidos = [
   {
-    titulo: "Combo Minha Caceta",
+    titulo: "Combo de 110 unidades",
     descricao: "Grátis 5 mini-churros.",
     preco: 68.5,
     image_url: "",
