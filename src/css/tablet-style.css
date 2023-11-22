@@ -263,7 +263,7 @@ main {
     transition: 150ms;
 }
 .mais-vendidos-item:hover {
-    scale: 1.05;
+    scale: 1.0;
 }
 
 .mais-vendidos-item > picture {
