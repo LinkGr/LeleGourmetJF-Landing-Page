@@ -424,7 +424,7 @@ main {
     display: flex;
     flex-direction: column;
 
-    min-width: 230px;
+    min-width: 260px;
     height: 88%;
     padding: 5% 8%;
     gap: 5%;

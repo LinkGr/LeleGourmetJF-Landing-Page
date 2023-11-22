@@ -444,14 +444,13 @@ header {
 }
 #container-cardapio h2 {
     align-self: center;
-    padding: 3% 0 5% 0;
+    padding: 3% 0 8% 0;
 }
 #cardapio-itens {
     display: grid;
-    align-items: end;
 
     grid-template-columns: repeat(4, 1fr);
-    gap: 10% 1%;
+    gap: 17% 2%;
 
     width: 100%;
     height: fit-content;
@@ -485,7 +484,7 @@ header {
     margin-bottom: 10px;
 
     width: 83%;
-    aspect-ratio: 3/2;
+    height: 100px;
 }
 .cardapio-item > picture > img {
     position: absolute;
